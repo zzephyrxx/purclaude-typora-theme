@@ -27,11 +27,12 @@ A refined dark purple theme for [Typora](https://typora.io/), combining the eleg
 ```
 typora-theme-purclaude/
 ├── purclaude.css              # Main theme stylesheet
-├── purclaude/                 # Theme assets
+├── purclaude/                 # Theme assets (fonts)
 │   ├── AnthropicSansWebText.ttf
 │   ├── AnthropicSerifWebText.ttf
 │   ├── AnthropicMonoVariable.ttf
 │   └── NotoSerifSC-VariableFont_wght.ttf
+├── demo.md                    # Theme demo & showcase document
 ├── screenshots/               # Theme screenshots
 │   └── main.png
 ├── LICENSE
@@ -52,6 +53,10 @@ The theme uses CSS custom properties for easy customization. Edit these variable
 }
 ```
 
+## Demo
+
+Open [`demo.md`](demo.md) in Typora to preview the full theme showcase, including headings, tables, math, code blocks, callouts, task lists, and more.
+
 ## Screenshots
 
 > **TODO**: Add your theme screenshots here.
@@ -62,5 +67,6 @@ The theme uses CSS custom properties for easy customization. Edit these variable
 
 ## Credits
 
-- **Design**: Inspired by [Claude](https://anthropic.com/) theme aesthetics
+- **Based on**: [Tsumugii24/claude-typora-theme](https://github.com/Tsumugii24/claude-typora-theme) (which builds on [blaxisomu/CLAUDE-Typora](https://github.com/blaxisomu/CLAUDE-Typora))
+- **Design**: Inspired by [Claude](https://claude.ai) visual aesthetics
 - **Fonts**: Anthropic Web Fonts + [Noto Serif SC](https://fonts.google.com/noto/specimen/Noto+Serif+SC)
