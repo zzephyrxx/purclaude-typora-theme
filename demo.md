@@ -1,40 +1,42 @@
 # Purclaude Theme Demo
 
-> 这份示例文档用于展示 **Purclaude** 主题的排版效果。包含标题、正文、数学公式、表格、高亮、引用、代码块、列表、任务列表、脚注等常见 Markdown 元素。
+> [中文版](demo_zh.md)
+
+> This example document showcases the typography and styling of the **Purclaude** theme. It covers headings, prose, math, tables, highlights, callouts, quotes, code blocks, lists, tasks, footnotes, and more.
 >
-> Purclaude 基于 [Tsumugii24/claude-typora-theme](https://github.com/Tsumugii24/claude-typora-theme) 构建，在其基础上重新设计了深紫色调色板、交互动效与排版细节，打造更具沉浸感的暗色写作体验。
+> Purclaude is built upon [Tsumugii24/claude-typora-theme](https://github.com/Tsumugii24/claude-typora-theme), redesigned with a deep purple palette, refined interactions, and polished typographic details for an immersive dark writing experience.
 
 ---
 
-## 1. 正文排版
+## 1. Reading Flow
 
-Purclaude 主题专为长文写作设计。段落间距舒适，行高适中，配合 Anthropic Serif 衬线字体与 Noto Serif SC 中文字体，兼顾中英文混排的阅读体验。
+Purclaude is designed for long-form Markdown writing. Paragraph spacing is comfortable, line height is generous, and the Anthropic Serif typeface paired with Noto Serif SC delivers a refined reading experience for both Latin and CJK text.
 
-你可以在同一段落中使用 **粗体文本**、*斜体文本*、`行内代码`、==高亮文本==、<u>下划线文本</u>，以及 [Typora 链接](https://typora.io) 等多种行内样式。中英文自然混排：这是一个中文段落，用来检查中英混排、**加粗**、行距和标点显示效果。
+You can use **bold text**, *italic text*, `inline code`, ==highlighted text==, <u>underlined text</u>, and links such as [Typora](https://typora.io) in the same paragraph. Chinese and English mix naturally: 这是一个中文段落，用来检查中英混排、**加粗**、行距和标点显示效果。
 
-> 好的排版应当让结构清晰可见，而不会让界面显得嘈杂。
+> Good typography should make structure visible without making the interface feel noisy.
 >
-> 这段引用用于检查缩进、对比度和行高表现。
+> This quote block is useful for checking indentation, contrast, and line height.
 
->> 嵌套引用同样经过精心调色，确保层次分明。
+>> Nested quotes are also carefully styled to maintain clear visual hierarchy.
 
-## 2. 标题层级
+## 2. Heading Levels
 
-以下展示从 H1 到 H6 的标题样式。Purclaude 为不同层级分配了不同的紫色调——H1 使用温暖的亮紫 (`--accent-warm`)，H2 使用主色调 (`--accent-primary`)，H3 使用次色调 (`--accent-secondary`)，逐级递减。
+Below are heading styles from H1 through H6. Purclaude assigns a different shade of purple to each level — H1 uses the warm bright purple (`--accent-warm`), H2 the primary accent (`--accent-primary`), H3 the secondary accent (`--accent-secondary`), tapering off gradually.
 
-### 三级标题 — Secondary Accent
+### Third Level — Secondary Accent
 
-#### 四级标题 — 正文色
+#### Fourth Level — Body Color
 
-##### 五级标题 — 柔和灰紫
+##### Fifth Level — Soft Muted Purple
 
-###### 六级标题 — 最低层级
+###### Sixth Level — Lowest Tier
 
-## 3. 数学公式
+## 3. Mathematics
 
-行内数学公式应自然融入文本，例如 $E = mc^2$、$a^2 + b^2 = c^2$，以及 $\alpha + \beta = \gamma$。
+Inline math should sit comfortably within text, for example $E = mc^2$, $a^2 + b^2 = c^2$, and $\alpha + \beta = \gamma$.
 
-块级数学公式保持居中与可读性：
+Block math should remain centered and readable:
 
 $$
 \nabla_\theta J(\theta)
@@ -44,7 +46,7 @@ $$
 \right]
 $$
 
-矩阵示例：
+A matrix example:
 
 $$
 A =
@@ -55,23 +57,23 @@ A =
 \end{bmatrix}
 $$
 
-欧拉公式，数学中最优雅的等式之一：
+Euler's formula, one of the most elegant equations in mathematics:
 
 $$
 e^{i\pi} + 1 = 0
 $$
 
-## 4. 表格
+## 4. Tables
 
-下方表格用于检查表头样式、行分隔线、对齐方式和中英文混合内容的显示效果。
+The tables below are useful for checking header styles, row separators, alignment, and mixed-language content.
 
-| 特性 | Purclaude | Claude Dark | 说明 |
+| Feature | Purclaude | Claude Dark | Notes |
 | :-- | :--: | :--: | :-- |
-| 色调 | 深紫色 | 深灰棕色 | Purclaude 采用 `#1a1625` 为基色 |
-| 字体 | Anthropic Serif | Anthropic Sans | 正文使用衬线体，更具阅读质感 |
-| 代码高亮 | 紫色系 | 灰棕系 | 关键词、字符串、数字各有专属配色 |
-| CJK 支持 | Noto Serif SC | Noto Serif SC | 完整中文衬线字体支持 |
-| 聚焦模式 | 自定义淡出 | 默认 | 非活跃段落柔和淡出至深紫 |
+| Palette | Deep purple | Dark warm gray | Purclaude uses `#1a1625` as base |
+| Body Font | Anthropic Serif | Anthropic Sans | Serif body for richer reading |
+| Syntax Colors | Purple family | Warm gray family | Keywords, strings, numbers each have distinct colors |
+| CJK Support | Noto Serif SC | Noto Serif SC | Full Chinese serif font support |
+| Focus Mode | Custom fade-out | Default | Inactive paragraphs softly fade to deep purple |
 
 | Model | AIME 2025 | MMLU | HumanEval | Notes |
 | :-- | --: | --: | --: | :-- |
@@ -79,36 +81,36 @@ $$
 | GPT-5 | 94.2% | 91.8% | 93.7% | Strong contender |
 | Qwen3-32B | 76.7% | 85.4% | 88.2% | Open-source leader |
 
-## 5. 列表与任务
+## 5. Lists and Tasks
 
-### 有序列表
+### Ordered List
 
-1. 将 `purclaude.css` 和 `purclaude/` 文件夹复制到 Typora 主题目录
-2. 重启 Typora
-3. 在 **偏好设置 → 外观 → 主题** 中选择 **Purclaude**
-4. 打开此示例文件，检查所有元素渲染效果
+1. Copy `purclaude.css` and the `purclaude/` folder to Typora's themes directory.
+2. Restart Typora.
+3. Select **Purclaude** from **Preferences → Appearance → Themes**.
+4. Open this example file and check that every element renders correctly.
 
-### 无序列表
+### Unordered List
 
-- 正文排版应保持高可读性
-- 嵌套信息应保持视觉层次
-  - 二级嵌套项
-  - 另一个二级项
-    - 三级嵌套项
-- 代码、公式、表格和引用应与页面融为一体
+- Prose should remain highly readable.
+- Nested information should maintain visual hierarchy.
+  - Second-level item
+  - Another second-level item
+    - Third-level item
+- Code, math, tables, and quotes should feel integrated with the page.
 
-### 任务列表
+### Task List
 
-- [x] 完成深紫色调色板设计
-- [x] 集成 Anthropic 字体家族
-- [x] 自定义复选框样式
-- [x] 优化聚焦模式 (F8) 淡出效果
-- [ ] 添加主题截图
-- [ ] 提交到 Typora Theme Gallery
+- [x] Design the deep purple palette
+- [x] Integrate the Anthropic font family
+- [x] Custom checkbox styling
+- [x] Optimize Focus Mode (F8) fade-out effect
+- [ ] Add theme screenshots
+- [ ] Submit to Typora Theme Gallery
 
-## 6. 代码
+## 6. Code
 
-行内代码如 `font-family`、`@font-face`、`border-bottom` 应与周围文本对齐良好。
+Inline code such as `font-family`, `@font-face`, and `border-bottom` should align well with surrounding text.
 
 ### CSS
 
@@ -172,51 +174,51 @@ const purclaude = {
 console.log(`Theme: ${purclaude.name} (${purclaude.type})`);
 ```
 
-## 7. 引用提示 (Callouts)
+## 7. Callouts
 
 > [!NOTE]
-> 这是一条说明提示。适用于中性的补充信息。Purclaude 主题为引用块设计了半透明紫色背景。
+> This is a note callout. Useful for neutral supporting information. Purclaude styles blockquotes with a semi-transparent purple background.
 
 > [!TIP]
-> 使用提示框来突出工作流建议、写作技巧或小提醒。
+> Use callouts to highlight workflow hints, writing advice, or small reminders.
 
 > [!IMPORTANT]
-> 重要提示应清晰突出，但不会压倒周围的内容。
+> Important callouts should stand out clearly without overwhelming nearby content.
 
 > [!WARNING]
-> 警告提示用于引起对风险假设或破坏性变更的注意。
+> Warning callouts help draw attention to risky assumptions or breaking changes.
 
 > [!CAUTION]
-> 注意提示适用于不可逆操作或需要谨慎决策的场景。
+> Caution callouts are useful for destructive operations or irreversible decisions.
 
-## 8. 图像
+## 8. Images
 
-如果你需要测试图像样式，可以在此处插入图片。Purclaude 为图片添加了圆角边框和阴影效果，悬停时边框会变为主色调紫色。
+Insert an image here to test image styling. Purclaude adds rounded borders and shadow to images; on hover, the border transitions to the primary purple accent.
 
-## 9. 分隔线
+## 9. Horizontal Rule
 
-下方是 Purclaude 主题的渐变分隔线，从透明渐变到紫色再回到透明：
-
----
-
-## 10. 脚注
-
-脚注应当可见，但不会干扰正文的阅读流程。[^1][^2]
+Below is Purclaude's gradient horizontal rule — fading from transparent to purple and back:
 
 ---
 
-## 关于 Purclaude
+## 10. Footnotes
 
-**Purclaude** (Purple + Claude) 是一款深紫色暗色 Typora 主题，灵感来源于 [Claude](https://claude.ai) 的视觉美学。
+Footnotes should be visible without distracting from the main reading flow.[^1][^2]
 
-本主题基于 [Tsumugii24/claude-typora-theme](https://github.com/Tsumugii24/claude-typora-theme) 进行二次开发，主要改进包括：
+---
 
-- 全新的深紫色调色板，替换原有的灰棕暗色方案
-- 正文采用 Anthropic Serif 衬线字体，提升长文阅读体验
-- 重新设计的选中态、悬停态和过渡动画
-- 自定义复选框、分隔线渐变和代码高亮配色
-- 增强的聚焦模式 (F8) 视觉效果
+## About Purclaude
 
-[^1]: Purclaude 主题以 MIT 协议发布，可自由使用和修改。
+**Purclaude** (Purple + Claude) is a deep purple dark theme for Typora, inspired by the visual aesthetics of [Claude](https://claude.ai).
 
-[^2]: 基于 [Tsumugii24/claude-typora-theme](https://github.com/Tsumugii24/claude-typora-theme)，该项目又基于 [blaxisomu/CLAUDE-Typora](https://github.com/blaxisomu/CLAUDE-Typora) 开发。
+This theme is built upon [Tsumugii24/claude-typora-theme](https://github.com/Tsumugii24/claude-typora-theme). Key improvements include:
+
+- A completely new deep purple palette, replacing the original warm-gray dark scheme
+- Anthropic Serif as the body typeface for a richer long-form reading experience
+- Redesigned selection states, hover states, and transition animations
+- Custom checkboxes, gradient horizontal rules, and syntax highlight colors
+- Enhanced Focus Mode (F8) visual effects
+
+[^1]: Purclaude is released under the MIT License. Free to use and modify.
+
+[^2]: Built upon [Tsumugii24/claude-typora-theme](https://github.com/Tsumugii24/claude-typora-theme), which itself builds on [blaxisomu/CLAUDE-Typora](https://github.com/blaxisomu/CLAUDE-Typora).

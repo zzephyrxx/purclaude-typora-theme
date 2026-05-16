@@ -1,6 +1,8 @@
 # Purclaude
 
-A refined dark purple theme for [Typora](https://typora.io/), combining the elegance of deep purple tones with a sophisticated reading and writing experience. Inspired by [Claude](https://anthropic.com/) aesthetics.
+> [中文文档](README_zh.md)
+
+A refined dark purple theme for [Typora](https://typora.io/), combining the elegance of deep purple tones with a sophisticated reading and writing experience. Inspired by [Claude](https://claude.ai) aesthetics.
 
 ![Purclaude Theme Preview](screenshots/main.png)
 
@@ -32,11 +34,13 @@ typora-theme-purclaude/
 │   ├── AnthropicSerifWebText.ttf
 │   ├── AnthropicMonoVariable.ttf
 │   └── NotoSerifSC-VariableFont_wght.ttf
-├── demo.md                    # Theme demo & showcase document
+├── demo.md                    # Theme demo & showcase (English)
+├── demo_zh.md                 # Theme demo & showcase (中文)
 ├── screenshots/               # Theme screenshots
 │   └── main.png
 ├── LICENSE
-└── README.md
+├── README.md                  # English
+└── README_zh.md               # 中文
 ```
 
 ## Customization
@@ -56,6 +60,8 @@ The theme uses CSS custom properties for easy customization. Edit these variable
 ## Demo
 
 Open [`demo.md`](demo.md) in Typora to preview the full theme showcase, including headings, tables, math, code blocks, callouts, task lists, and more.
+
+中文版演示文档：[`demo_zh.md`](demo_zh.md)
 
 ## Screenshots
 
