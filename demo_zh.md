@@ -76,7 +76,7 @@ $$
 | 聚焦模式 | 自定义淡出 | 默认 | 非活跃段落柔和淡出至深紫 |
 
 | Model | AIME 2025 | MMLU | HumanEval | Notes |
-| :-- | --: | --: | --: | :-- |
+| :-: | --: | --: | --: | :-- |
 | Claude 4 Opus | 96.7% | 92.3% | 95.1% | State of the art |
 | GPT-5 | 94.2% | 91.8% | 93.7% | Strong contender |
 | Qwen3-32B | 76.7% | 85.4% | 88.2% | Open-source leader |
@@ -130,6 +130,7 @@ $$
     border-left: 3px solid var(--warning-border);
     border-radius: 0 8px 8px 0;
 }
+
 ```
 
 ### Python

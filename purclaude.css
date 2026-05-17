@@ -94,7 +94,7 @@ html, body {
     --scrollbar-hover-color: #7c6db8;
 
     /* 代码块 */
-    --pre-bg-color: #25203680;
+    --pre-bg-color:#241e38;
     --pre-border-color: #3d355826;
     --pre-inputfont-color: #9d94b8;
 
@@ -254,11 +254,17 @@ body {
 
 .md-fences .CodeMirror-selected,
 .CodeMirror-selected,
-.md-fences .CodeMirror-selectedtext {
+.md-fences .CodeMirror-selectedtext,
+.md-rawblock-on-edit .CodeMirror-selected,
+.md-rawblock-on-edit .CodeMirror-selectedtext,
+.md-math-block .CodeMirror-selected,
+.md-math-block .CodeMirror-selectedtext {
     background-color: #4c388680 !important;
 }
 
-.md-fences .CodeMirror-focused .CodeMirror-selected {
+.md-fences .CodeMirror-focused .CodeMirror-selected,
+.md-rawblock-on-edit .CodeMirror-focused .CodeMirror-selected,
+.md-math-block .CodeMirror-focused .CodeMirror-selected {
     background-color: #4c388680 !important;
 }
 
@@ -462,13 +468,13 @@ span[md-inline="highlight"] mark,
     background-color: transparent !important;
     color: inherit !important;
     text-decoration: underline wavy var(--highlight-wavy);
-    text-underline-offset: 3px;
+    text-underline-offset: 6px;
 }
 
 /*--- 下划线 ---*/
 span[md-inline="underline"] u {
     text-decoration: underline solid var(--accent-primary) !important;
-    text-underline-offset: 3px;
+    text-underline-offset: 6px;
 }
 
 /* =========================================
@@ -575,6 +581,13 @@ span[md-inline="underline"] u {
 .md-fences .CodeMirror-gutters {
     background-color: var(--pre-bg-color) !important;
     border-right: 1px solid var(--pre-border-color) !important;
+    min-width: 2.5em !important;
+}
+
+.md-fences .CodeMirror-linenumber {
+    min-width: 2em !important;
+    padding: 0 4px 0 0 !important;
+    text-align: right;
 }
 
 .md-fences .CodeMirror {
@@ -619,6 +632,49 @@ span[md-inline="underline"] u {
     color: #f472b6 !important;
 }
 
+/* 代码语言标签 - 浮动覆盖在代码块右下角 */
+.md-fences {
+    position: relative;
+}
+
+.md-fences .code-tooltip {
+    position: absolute !important;
+    right: 0.5rem !important;
+    bottom: 0.5rem !important;
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+    background-color: var(--hover-color) !important;
+    border: 1px solid var(--border-color-30) !important;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+    padding: 0.1rem 0.5rem !important;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    pointer-events: none;
+    z-index: 10;
+    line-height: 1.4;
+}
+
+.md-fences:hover .code-tooltip {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.md-fences .code-tooltip .ty-input {
+    background-color: transparent !important;
+    color: var(--font-muted) !important;
+    font-size: 0.75rem !important;
+    padding: 0 !important;
+    height: auto !important;
+    line-height: 1.4 !important;
+}
+
+.md-lang {
+    color: var(--font-muted) !important;
+    font-size: 0.75rem !important;
+}
+
 /* 行内代码 */
 #write code {
     background-color: var(--code-bg-color);
@@ -660,11 +716,12 @@ span[md-inline="underline"] u {
 
 #write table {
     width: calc(100% - 3rem);
-    margin: 1rem auto;
+    margin: 0.1rem auto;
     border-collapse: collapse;
     border: 1px solid var(--border-color);
     border-radius: var(--raduis-8);
     overflow: hidden;
+    font-size: 0.92rem;
 }
 
 #write table th {
@@ -672,12 +729,17 @@ span[md-inline="underline"] u {
     color: var(--accent-warm);
     font-weight: var(--font-strong);
     text-align: left;
-    padding: 0.75rem 1rem;
+    padding: 0.6rem 0.85rem;
     border-bottom: 2px solid var(--table-th-border);
+    border-right: 1px solid var(--table-th-border);
+}
+
+#write table th:last-child {
+    border-right: none;
 }
 
 #write table td {
-    padding: 0.6rem 1rem;
+    padding: 0.45rem 0.85rem;
     border-bottom: 1px solid var(--table-td-border);
     border-right: 1px solid var(--table-td-border);
 }
@@ -688,6 +750,77 @@ span[md-inline="underline"] u {
 
 #write table tr:hover td {
     background-color: var(--hover-color);
+}
+
+/* 表格编辑弹窗 & 工具栏 */
+.ty-table-edit {
+    background-color: var(--bg-secondary) !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+.ty-table-edit td {
+    background-color: var(--bg-color) !important;
+    border: 1px solid var(--border-color-30) !important;
+    border-radius: 0 !important;
+    width: 16px !important;
+    height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+    padding: 0 !important;
+    font-size: 0 !important;
+}
+
+.ty-table-edit td.active,
+.ty-table-edit td.highlight {
+    background-color: var(--hover-color) !important;
+    border-color: var(--accent-primary) !important;
+    border-radius: 0 !important;
+}
+
+.ty-table-edit .ty-table-edit-footer {
+    background-color: var(--bg-secondary) !important;
+    color: var(--font-muted) !important;
+}
+
+#md-grid-widget {
+    background-color: var(--bg-secondary) !important;
+    border: none !important;
+    border-radius: var(--raduis-8) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+#md-grid-widget > div {
+    border: none !important;
+}
+
+.md-table-resize-popover,
+#typora-table-row-col-resize {
+    background-color: var(--bg-secondary) !important;
+    border: none !important;
+    border-radius: var(--raduis-8) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+.table-tooltip {
+    background-color: var(--bg-secondary) !important;
+    border: none !important;
+    border-radius: var(--raduis-8) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35) !important;
+}
+
+.table-tooltip .btn,
+.table-tooltip button {
+    background-color: transparent !important;
+    color: var(--font-muted) !important;
+    border: none !important;
+}
+
+.table-tooltip .btn:hover,
+.table-tooltip button:hover {
+    background-color: var(--hover-color) !important;
+    color: var(--font-color) !important;
 }
 
 /* =========================================
@@ -870,34 +1003,63 @@ span[md-inline="underline"] u {
 }
 
 .md-math-block.md-focus,
-.md-math-block:hover {
+.md-rawblock-on-edit,
+.md-math-block.md-rawblock-on-edit,
+.md-rawblock-tooltip,
+#write .md-math-block.md-rawblock-on-edit,
+.md-rawblock-container {
     background-color: var(--pre-bg-color) !important;
 }
 
-.md-rawblock-tooltip,
-.md-rawblock-tooltip.md-rawblock-control {
-    background-color: var(--button-bg-color) !important;
-    color: var(--font-muted) !important;
-    border: 1px solid var(--border-color) !important;
-    border-radius: var(--raduis-8) !important;
+#write .md-math-block.md-focus::before,
+.md-rawblock-on-edit .md-rawblock-input,
+.md-rawblock-input {
+    background-color: var(--bg-secondary) !important;
+    color: var(--font-color) !important;
 }
 
-#write .MathJax_Display:focus,
-#write .md-math-block.md-focus .md-rawblock-container,
-#write .md-math-block.md-focus .md-rawblock-input {
+.md-rawblock-tooltip .md-rawblock-tooltip-btn {
     background-color: var(--hover-color) !important;
-    border-color: var(--border-color) !important;
-}
-
-.md-math-block .md-rawblock-before,
-.md-math-block .md-rawblock-after {
-    background-color: transparent !important;
+    color: var(--font-muted) !important;
 }
 
 .md-inline-math.md-expand,
-.md-inline-math:hover {
+.md-inline-math.md-focus {
     background-color: var(--code-bg-color) !important;
-    border-radius: 4px;
+    color: var(--font-color) !important;
+}
+
+/* 公式悬浮/编辑状态 - 覆盖 Typora 默认白色背景 */
+.md-math-block.md-rawblock-on-edit .md-rawblock-before,
+.md-math-block.md-rawblock-on-edit .md-rawblock-after,
+.md-math-block .md-rawblock-before,
+.md-math-block .md-rawblock-after {
+    background-color: var(--pre-bg-color) !important;
+    color: var(--font-muted) !important;
+}
+
+.md-math-block.md-rawblock-on-edit .md-rawblock-container,
+.md-math-block .md-rawblock-container,
+.md-math-block .md-math-container {
+    background-color: var(--pre-bg-color) !important;
+}
+
+#write .md-math-block .md-rawblock-control:not(.md-rawblock-on-edit) {
+    background-color: transparent !important;
+}
+
+.md-hover-tip,
+#math-tooltip,
+.md-rawblock-on-edit .CodeMirror,
+.md-math-block .CodeMirror {
+    background-color: var(--pre-bg-color) !important;
+    color: var(--font-color) !important;
+}
+
+.md-rawblock-on-edit .CodeMirror-gutters,
+.md-math-block .CodeMirror-gutters {
+    background-color: var(--pre-bg-color) !important;
+    border-right: 1px solid var(--pre-border-color) !important;
 }
 
 /* =========================================
