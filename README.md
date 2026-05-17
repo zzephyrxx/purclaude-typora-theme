@@ -63,10 +63,6 @@ Open [`demo.md`](demo.md) in Typora to preview the full theme showcase, includin
 
 中文版演示文档：[`demo_zh.md`](demo_zh.md)
 
-## Screenshots
-
-> **TODO**: Add your theme screenshots here.
-
 ## License
 
 [MIT License](LICENSE)

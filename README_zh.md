@@ -61,10 +61,6 @@ typora-theme-purclaude/
 
 在 Typora 中打开 [`demo_zh.md`](demo_zh.md) 预览完整的主题展示效果，包括标题、表格、数学公式、代码块、引用提示、任务列表等。
 
-## 截图
-
-> **TODO**: 在此添加主题截图。
-
 ## 许可证
 
 [MIT License](LICENSE)
