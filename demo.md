@@ -1,13 +1,5 @@
 # Purclaude Theme Demo
 
-> [中文版](demo_zh.md)
-
-> This example document showcases the typography and styling of the **Purclaude** theme. It covers headings, prose, math, tables, highlights, callouts, quotes, code blocks, lists, tasks, footnotes, and more.
->
-> Purclaude is built upon [Tsumugii24/claude-typora-theme](https://github.com/Tsumugii24/claude-typora-theme), redesigned with a deep purple palette, refined interactions, and polished typographic details for an immersive dark writing experience.
-
----
-
 ## 1. Reading Flow
 
 Purclaude is designed for long-form Markdown writing. Paragraph spacing is comfortable, line height is generous, and the Anthropic Serif typeface paired with Noto Serif SC delivers a refined reading experience for both Latin and CJK text.
