@@ -869,6 +869,37 @@ span[md-inline="underline"] u {
     color: var(--font-color);
 }
 
+.md-math-block.md-focus,
+.md-math-block:hover {
+    background-color: var(--pre-bg-color) !important;
+}
+
+.md-rawblock-tooltip,
+.md-rawblock-tooltip.md-rawblock-control {
+    background-color: var(--button-bg-color) !important;
+    color: var(--font-muted) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--raduis-8) !important;
+}
+
+#write .MathJax_Display:focus,
+#write .md-math-block.md-focus .md-rawblock-container,
+#write .md-math-block.md-focus .md-rawblock-input {
+    background-color: var(--hover-color) !important;
+    border-color: var(--border-color) !important;
+}
+
+.md-math-block .md-rawblock-before,
+.md-math-block .md-rawblock-after {
+    background-color: transparent !important;
+}
+
+.md-inline-math.md-expand,
+.md-inline-math:hover {
+    background-color: var(--code-bg-color) !important;
+    border-radius: 4px;
+}
+
 /* =========================================
    标签/标签页样式
    ========================================= */
