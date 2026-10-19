@@ -599,16 +599,34 @@ span[md-inline="underline"] u {
     background-color: transparent !important;
 }
 
+/*--- 代码块光标 ---*/
+.CodeMirror-cursor,
+.md-fences .CodeMirror-cursor,
+.md-rawblock-on-edit .CodeMirror-cursor,
+.md-math-block .CodeMirror-cursor {
+    border-left: 2px solid var(--caret-color) !important;
+    border-right: none !important;
+}
+
+.cm-fat-cursor .CodeMirror-cursor {
+    background-color: var(--caret-color) !important;
+}
+
+/*--- 语法高亮 (覆盖 CodeMirror 默认浅色主题配色) ---*/
 .md-fences .cm-keyword {
-    color: #c084fc !important;
+    color: #d8b4fe !important;
 }
 
 .md-fences .cm-string {
     color: #86efac !important;
 }
 
+.md-fences .cm-string-2 {
+    color: #6ee7b7 !important;
+}
+
 .md-fences .cm-number {
-    color: #fbbf24 !important;
+    color: #fcd34d !important;
 }
 
 .md-fences .cm-comment {
@@ -616,20 +634,88 @@ span[md-inline="underline"] u {
     font-style: italic;
 }
 
-.md-fences .cm-variable {
-    color: var(--accent-warm) !important;
+.md-fences .cm-variable,
+.md-fences .cm-punctuation {
+    color: var(--font-color) !important;
+}
+
+.md-fences .cm-variable-2 {
+    color: #93c5fd !important;
+}
+
+.md-fences .cm-variable-3,
+.md-fences .cm-type {
+    color: #5eead4 !important;
 }
 
 .md-fences .cm-def {
     color: #67e8f9 !important;
 }
 
-.md-fences .cm-operator {
-    color: var(--accent-primary) !important;
+.md-fences .cm-property {
+    color: #a5b4fc !important;
 }
 
-.md-fences .cm-atom {
-    color: #f472b6 !important;
+.md-fences .cm-operator {
+    color: #c4b5fd !important;
+}
+
+.md-fences .cm-atom,
+.md-fences .cm-builtin,
+.md-fences .cm-tag {
+    color: #f9a8d4 !important;
+}
+
+.md-fences .cm-attribute,
+.md-fences .cm-meta,
+.md-fences .cm-qualifier {
+    color: #fdba74 !important;
+}
+
+.md-fences .cm-bracket {
+    color: var(--sidebar-font-color) !important;
+}
+
+.md-fences .cm-header,
+.md-fences .cm-strong {
+    color: #d8b4fe !important;
+    font-weight: bold;
+}
+
+.md-fences .cm-em {
+    font-style: italic;
+}
+
+.md-fences .cm-quote {
+    color: #86efac !important;
+}
+
+.md-fences .cm-link {
+    color: #93c5fd !important;
+    text-decoration: underline;
+}
+
+.md-fences .cm-hr {
+    color: var(--font-muted) !important;
+}
+
+.md-fences .cm-positive {
+    color: #86efac !important;
+}
+
+.md-fences .cm-negative,
+.md-fences .cm-error {
+    color: #fca5a5 !important;
+}
+
+.md-fences .CodeMirror-matchingbracket {
+    color: var(--font-color) !important;
+    background-color: var(--accent-glow);
+    text-decoration: none !important;
+}
+
+.md-fences .CodeMirror-nonmatchingbracket {
+    color: #fca5a5 !important;
 }
 
 /* 代码语言标签 - 浮动覆盖在代码块右下角 */
